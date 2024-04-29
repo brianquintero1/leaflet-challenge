@@ -46,6 +46,7 @@ function markerSize(magnitude) {
     }).addTo(myMap);
   });
 
+  //Format then add legend
   var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
@@ -59,7 +60,7 @@ legend.onAdd = function (map) {
     to = depths[i + 1];
 
     labels.push(
-      '<i style="background:' + depthColor(from + 1) + '"></i> ' +
+      '<i style="background-color:' + depthColor(from + 1) + ";" + '"></i> ' +
       from + (to ? '&ndash;' + to : '+'));
   }
 
@@ -67,4 +68,5 @@ legend.onAdd = function (map) {
   return div;
 };
 
+//Display legend
 legend.addTo(myMap);
